@@ -19,7 +19,9 @@ object SourceDataLoading {
     sparkSession.sparkContext.hadoopConfiguration.set("fs.s3n.awsAccessKeyId", s3Config.getString("access_key"))
     sparkSession.sparkContext.hadoopConfiguration.set("fs.s3n.awsSecretAccessKey", s3Config.getString("secret_access_key"))
 
-    val olDf = Utility.readFromSftp(sparkSession, rootConfig.getConfig("sftp_conf"), "receipts_delta_GBR_14_10_2017.csv")
+    val olDf = Utility
+      .readFromSftp(sparkSession, rootConfig.getConfig("sftp_conf"), "receipts_delta_GBR_14_10_2017.csv")
+        .withColumn("ins_ts", current_date())
     olDf.show()
 
   }
