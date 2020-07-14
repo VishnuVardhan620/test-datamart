@@ -4,7 +4,7 @@
 		module="test-datamart$sources_2.10"
 		revision="0.1"
 		status="integration"
-		publication="20200714082015"
+		publication="20200714082850"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>
@@ -152,6 +152,9 @@
 		</dependency>
 		<dependency org="org.scala-sbt" name="completion" rev="0.13.13" transitive="false" conf="default->compile,default(compile)">
 			<artifact name="completion" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		</dependency>
+		<dependency org="com.eed3si9n" name="sbt-assembly" rev="0.12.0" transitive="false" conf="default->compile,default(compile)" scalaVersion="2.10" sbtVersion="0.13">
+			<artifact name="sbt-assembly" type="src" ext="jar" conf="sources" e:classifier="sources"/>
 		</dependency>
 		<dependency org="org.scala-sbt" name="test-interface" rev="1.0" transitive="false" conf="default->default,compile,runtime,default(compile),master">
 			<artifact name="test-interface" type="src" ext="jar" conf="sources" e:classifier="sources"/>

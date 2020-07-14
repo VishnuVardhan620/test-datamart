@@ -1,6 +1,7 @@
 [debug] Other repositories:
 [debug] Default repositories:
 [debug] Using inline dependencies specified in Scala.
+[debug] no default cache defined: set to /Users/Vishnu/.ivy2/cache
 [debug] :: resolving dependencies :: default#test-datamart$sbt_2.10;0.1
 [debug] 	confs: [default]
 [debug] 	validate = true
@@ -45,7 +46,6 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]}
 [info] Resolving org.scala-sbt#actions;0.13.13 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#actions;0.13.13 {compile=[default(compile)]}
-[debug] no default cache defined: set to /Users/Vishnu/.ivy2/cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#actions;0.13.13
 [debug] 	found org.scala-sbt#actions;0.13.13 in sbt-chain
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]}
@@ -1720,10 +1720,18 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.10.6 {provided=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.6 {provided=[default(compile)]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {compile=[default(compile)]}
+[debug] == resolving dependencies default#test-datamart$sbt_2.10;0.1->com.eed3si9n#sbt-assembly;0.12.0 [default->default(compile)]
+[info] Resolving com.eed3si9n#sbt-assembly;0.12.0 ...
+[debug] sbt-chain: Checking cache for: dependency: com.eed3si9n#sbt-assembly;0.12.0 {default=[default(compile)]}
+[debug] sbt-chain: module revision found in cache: com.eed3si9n#sbt-assembly;0.12.0
+[debug] 	found com.eed3si9n#sbt-assembly;0.12.0 in sbt-chain
+[debug] 	[0.12.0] com.eed3si9n#sbt-assembly;0.12.0
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.4 {provided=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {provided=[default(compile)]}
 [debug] ignoring unhandled DependencyDescriptorMediator: class sbt.IvyScala$OverrideScalaMediator
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.13!sbt.jar
+[debug] 	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.12.0!sbt-assembly.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.10.6!scala-library.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#main;0.13.13!main.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#compiler-interface;0.13.13!compiler-interface.jar
@@ -1775,9 +1783,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.13!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] :: resolution report :: resolve 693ms :: artifacts dl 30ms
+[debug] :: resolution report :: resolve 2353ms :: artifacts dl 90ms
 [debug] 	report for default#test-datamart$sbt_2.10;0.1 default produced in /Users/Vishnu/Documents/GitHub/test-datamart/target/resolution-cache/reports/default-test-datamart$sbt_2.10-default.xml
-[debug] 	resolve done (693ms resolve - 30ms download)
+[debug] 	resolve done (2353ms resolve - 90ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#test-datamart$sources_2.10;0.1
 [debug] 	confs: [default]
@@ -2336,6 +2344,16 @@
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#completion;0.13.13
 [debug] 	found org.scala-sbt#completion;0.13.13 in sbt-chain
 [debug] == resolving dependencies default#test-datamart$sources_2.10;0.1->org.scala-sbt#completion;0.13.13 [default->default(compile)]
+[debug] == resolving dependencies default#test-datamart$sources_2.10;0.1->com.eed3si9n#sbt-assembly;0.12.0 [default->compile]
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-reflect;2.10.6 {default=[master(*), default, compile, runtime(*), runtime, default(compile), compile(*), master]} => dependency: org.scala-lang#scala-reflect;2.10.6 {default=[master(*), default, compile, runtime(*), runtime, default(compile), compile(*), master]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {default=[default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master]} => dependency: org.scala-lang#scala-library;2.10.6 {default=[default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master]}
+[debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.10.6 {default=[default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master]} => dependency: org.scala-lang#scala-compiler;2.10.6 {default=[default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master]}
+[info] Resolving com.eed3si9n#sbt-assembly;0.12.0 ...
+[debug] sbt-chain: Checking cache for: dependency: com.eed3si9n#sbt-assembly;0.12.0 {default=[compile, default(compile)]}
+[debug] sbt-chain: module revision found in cache: com.eed3si9n#sbt-assembly;0.12.0
+[debug] 	found com.eed3si9n#sbt-assembly;0.12.0 in sbt-chain
+[debug] 	[0.12.0] com.eed3si9n#sbt-assembly;0.12.0
+[debug] == resolving dependencies default#test-datamart$sources_2.10;0.1->com.eed3si9n#sbt-assembly;0.12.0 [default->default(compile)]
 [debug] == resolving dependencies default#test-datamart$sources_2.10;0.1->org.scala-sbt#test-interface;1.0 [default->default]
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-reflect;2.10.6 {default=[master(*), default, compile, runtime(*), runtime, default(compile), compile(*), master]} => dependency: org.scala-lang#scala-reflect;2.10.6 {default=[master(*), default, compile, runtime(*), runtime, default(compile), compile(*), master]}
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {default=[default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master]} => dependency: org.scala-lang#scala-library;2.10.6 {default=[default, master(*), compile, runtime(*), runtime, default(compile), compile(*), master]}
@@ -2466,11 +2484,12 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.13!test-agent.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#classfile;0.13.13!classfile.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#completion;0.13.13!completion.jar(src)
+[debug] 	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.12.0!sbt-assembly.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar(src)
 [debug] 	[NOT REQUIRED] com.jcraft#jsch;0.1.50!jsch.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.6!scala-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#interface;0.13.13!interface.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#logging;0.13.13!logging.jar(src)
-[debug] :: resolution report :: resolve 197ms :: artifacts dl 33ms
+[debug] :: resolution report :: resolve 327ms :: artifacts dl 77ms
 [debug] 	report for default#test-datamart$sources_2.10;0.1 default produced in /Users/Vishnu/Documents/GitHub/test-datamart/target/resolution-cache/reports/default-test-datamart$sources_2.10-default.xml
-[debug] 	resolve done (197ms resolve - 33ms download)
+[debug] 	resolve done (327ms resolve - 77ms download)

@@ -4,7 +4,7 @@
 		module="test-datamart_2.11"
 		revision="0.1"
 		status="integration"
-		publication="20200714082015"
+		publication="20200714082836"
 	>
 		<description>
 		test-datamart
@@ -34,5 +34,16 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.8" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.11" rev="2.1.1" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-sql_2.11" rev="2.1.1" conf="compile->default(compile)"/>
+		<dependency org="org.apache.hadoop" name="hadoop-aws" rev="2.7.4" conf="compile->default(compile)"/>
+		<dependency org="com.databricks" name="spark-avro_2.11" rev="3.2.0" conf="compile->default(compile)"/>
+		<dependency org="com.springml" name="spark-sftp_2.11" rev="1.1.1" conf="compile->default(compile)"/>
+		<dependency org="mysql" name="mysql-connector-java" rev="8.0.15" conf="compile->default(compile)"/>
+		<dependency org="com.databricks" name="spark-redshift_2.11" rev="3.0.0-preview1" conf="compile->default(compile)"/>
+		<dependency org="com.amazon.redshift" name="redshift-jdbc42" rev="1.2.1.1001" conf="compile->default(compile)"/>
+		<dependency org="org.mongodb.spark" name="mongo-spark-connector_2.11" rev="2.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.scala-logging" name="scala-logging_2.11" rev="3.7.2" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe" name="config" rev="1.2.1" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
