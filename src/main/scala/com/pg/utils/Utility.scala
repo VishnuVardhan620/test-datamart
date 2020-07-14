@@ -18,10 +18,10 @@ object Utility {
   }
 
   def writeParquetToS3(dataframe: DataFrame, s3Bucket: String, filename: String) = {
-    dataframe.write.option("header", "true").
-      partitionBy("mobile_os").
-      mode("overwrite").
-      parquet(s"s3n://$s3Bucket/$filename")
+    dataframe.write
+      .partitionBy("ins_ts")
+      .mode("append")
+      .parquet(s"s3n://$s3Bucket/PG_DATAMART/$filename")
   }
 
 }
