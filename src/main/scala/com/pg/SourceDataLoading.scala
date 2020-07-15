@@ -10,7 +10,7 @@ object SourceDataLoading {
   def main(args: Array[String]): Unit = {
     val rootConfig = ConfigFactory.load("application.conf").getConfig("conf")
     val s3Config = rootConfig.getConfig("s3_conf")
-
+    //val mysqlConfig = rootConfig.getConfig("mysql_conf")
     val sparkSession = SparkSession.builder()
       .master("local")
       .appName("Pampers DataMart")
@@ -24,15 +24,23 @@ object SourceDataLoading {
 
     val srcList = rootConfig.getStringList("SOURCE_DATA").toList
     for(src <- srcList) {
+      val srcConf = rootConfig.getConfig(src)
       src match {
-        case "OL" =>
-          val olDf = Utility
-            .readFromSftp(sparkSession, rootConfig.getConfig("sftp_conf"), "receipts_delta_GBR_14_10_2017.csv")
-            .withColumn("ins_ts", current_date())
-          olDf.show()
-          Utility.writeParquetToS3(olDf, s3Bucket, "OL")
+      case "OL" =>
+        val olDf = Utility
+          .readFromSftp(sparkSession, srcConf.getConfig("sftp_conf"), srcConf.getString("filename"))
+          .withColumn("ins_ts", current_date())
+        olDf.show()
+        Utility.writeParquetToS3(olDf, s3Bucket, "OL")
 
-        case "SB" =>
+      case "SB" =>
+          val dbtable = "TRANSACTIONSYNC"
+          val mysqlDf = Utility.
+            readFromRDS(sparkSession, srcConf.getConfig("mysql_conf"), dbtable,"App_Transaction_Id")
+
+          mysqlDf.show()
+      Utility.writeParquetToS3(mysqlDf, s3Bucket, "SB")
+
       }
     }
 
